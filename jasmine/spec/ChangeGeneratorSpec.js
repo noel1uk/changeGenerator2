@@ -7,9 +7,19 @@ describe('ChangeGenerator', function() {
       expect(cg.change('2p', '1p')).toEqual('1 x 1p');
     });
   });
+
   describe('.turnToNumber', function() {
+  
     it('removes the last character of the string', function() {
       expect(cg.turnToNumber('1p')).toEqual(1);
+    });
+  });
+
+  describe('setChangeOwed', function() {
+  
+    it('takes 2 integers and sets the changeOwed property', function() {
+      cg.setChangeOwed(2, 1);
+      expect(cg.changeOwed).toEqual(1);
     });
   });
 });
