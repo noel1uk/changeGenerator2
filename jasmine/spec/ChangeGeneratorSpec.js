@@ -67,4 +67,12 @@ describe('ChangeGenerator', function() {
       expect(cg.changeOwed).toEqual(0);
     });
   });
+
+  describe('.returnChange', function() {
+    cg2 = new ChangeGenerator();
+    cg2.collectedCoins = {2: 1}
+    it('returns the value and coin quantity in the correct format', function() {
+      expect(cg2.returnChange()).toEqual('1 x 2p');
+    });
+  });
 });
