@@ -19,7 +19,7 @@ class ChangeGenerator {
 
   highestPossibleReturn(changeOwed) {
     for ( let i = 0;; i++ ) {
-      if ( this.denominations[i] < changeOwed ){
+      if ( this.denominations[i] <= changeOwed ){
         return this.denominations[i];
       }
     }
