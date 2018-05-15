@@ -41,4 +41,12 @@ describe('ChangeGenerator', function() {
       expect(cg.coinIsInReturnedCoinChecker(2)).toEqual(true);
     });
   });
+
+  describe('.addCoin', function() {
+
+    it('adds a coin to the collectedCoins', function() {
+      cg.addCoin(1);
+      expect(cg.collectedCoins[2]).toEqual(1);
+    });
+  });
 });
