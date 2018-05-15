@@ -29,4 +29,8 @@ class ChangeGenerator {
   coinIsInReturnedCoinChecker(coinToBeAdded) {
     return coinToBeAdded in this.collectedCoins;
   }
+
+  addCoin(coin) {
+    this.collectedCoins[coin] = 1;
+  }
 }
