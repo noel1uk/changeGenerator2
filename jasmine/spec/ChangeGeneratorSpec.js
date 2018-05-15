@@ -45,7 +45,7 @@ describe('ChangeGenerator', function() {
   describe('.addCoin', function() {
 
     it('adds a coin to the collectedCoins', function() {
-      cg.addCoin(1);
+      cg.addCoin(2);
       expect(cg.collectedCoins[2]).toEqual(1);
     });
   });
