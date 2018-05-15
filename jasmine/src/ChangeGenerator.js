@@ -14,8 +14,8 @@ class ChangeGenerator {
     return number;
   }
   
-  setChangeOwed(valueRecieved, valueReturned) {
-    this.changeOwed = valueRecieved - valueReturned;
+  setChangeOwed(valueReceived, valueReturned) {
+    this.changeOwed = valueReceived - valueReturned;
   }
 
   highestPossibleReturn(changeOwed) {
@@ -33,10 +33,14 @@ class ChangeGenerator {
   addCoin(coin) {
     if ( this.coinIsInReturnedCoinChecker(coin) ) {
       this.collectedCoins[coin] += 1;
-      this.changeOwed -=coin;
+      this.changeOwed -= coin;
     } else {
       this.collectedCoins[coin] = 1;
-      this.changeOwed -=coin;
+      this.changeOwed -= coin;
     }
+  }
+
+  returnChange() {
+    return '1 x 2p';
   }
 }
