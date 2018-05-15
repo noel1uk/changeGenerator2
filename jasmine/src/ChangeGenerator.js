@@ -1,7 +1,8 @@
 class ChangeGenerator {
   constructor() {
     this.changeOwed = 0;
-    this.denominations = [2, 1]
+    this.denominations = [2, 1];
+    this.collectedCoins = {};
   }
   
   change() {
@@ -23,5 +24,9 @@ class ChangeGenerator {
         return this.denominations[i];
       }
     }
+  }
+
+  coinIsInReturnedCoinChecker(coinToBeAdded) {
+    return coinToBeAdded in this.collectedCoins;
   }
 }
