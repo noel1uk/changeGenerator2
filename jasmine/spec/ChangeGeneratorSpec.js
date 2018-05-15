@@ -33,8 +33,12 @@ describe('ChangeGenerator', function() {
 
   describe('.coinIsInReturnedCoinChecker', function() {
 
-    it("returns false when coin hasn't already been added to the collectedCoins object", function() {
-      expect(cg.coinIsInReturnedCoinChecker()).toEqual(false);
+    it("returns false when coin hasn't already been added to the collectedCoins property", function() {
+      expect(cg.coinIsInReturnedCoinChecker(2)).toEqual(false);
+    });
+    it('returns true when coin is in the collectedCoins property', function() {
+      cg.collectedCoins[2] = 1;
+      expect(cg.coinIsInReturnedCoinChecker(2)).toEqual(true);
     });
   });
 });
