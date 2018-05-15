@@ -19,8 +19,8 @@ class ChangeGenerator {
   }
 
   highestPossibleReturn(changeOwed) {
-    for ( let i = 0;; i++ ) {
-      if ( this.denominations[i] <= changeOwed ){
+    for ( let i = 0; i < this.denominations.length; i++ ) {
+      if ( this.denominations[i] <= changeOwed ) {
         return this.denominations[i];
       }
     }
@@ -33,8 +33,10 @@ class ChangeGenerator {
   addCoin(coin) {
     if ( this.coinIsInReturnedCoinChecker(coin) ) {
       this.collectedCoins[coin] += 1;
+      this.changeOwed -=coin;
     } else {
       this.collectedCoins[coin] = 1;
+      this.changeOwed -=coin;
     }
   }
 }
