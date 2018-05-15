@@ -61,5 +61,10 @@ describe('ChangeGenerator', function() {
       cg.addCoin(2);
       expect(cg.collectedCoins[2]).toEqual(2);
     });
+    it('deducts the coin value it adds from the changeOwed property', function() {
+      cg.changeOwed = 1;
+      cg.addCoin(1);
+      expect(cg.changeOwed).toEqual(0);
+    });
   });
 });
