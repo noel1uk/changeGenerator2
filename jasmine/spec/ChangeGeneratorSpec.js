@@ -27,6 +27,7 @@ describe('ChangeGenerator', function() {
     
     it('returns the highest possible value that is less then `changeOwed` from `denominations`', function() {
       expect(cg.highestPossibleReturn(4)).toEqual(2);
+      expect(cg.highestPossibleReturn(2)).toEqual(2);
     });
   });
 });
