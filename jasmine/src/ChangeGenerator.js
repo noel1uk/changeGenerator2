@@ -31,6 +31,10 @@ class ChangeGenerator {
   }
 
   addCoin(coin) {
-    this.collectedCoins[coin] = 1;
+    if ( this.coinIsInReturnedCoinChecker(coin) ) {
+      this.collectedCoins[coin] += 1;
+    } else {
+      this.collectedCoins[coin] = 1;
+    }
   }
 }
