@@ -30,4 +30,11 @@ describe('ChangeGenerator', function() {
       expect(cg.highestPossibleReturn(2)).toEqual(2);
     });
   });
+
+  describe('.coinIsInReturnedCoinChecker', function() {
+
+    it("returns false when coin hasn't already been added to the collectedCoins object", function() {
+      expect(cg.coinIsInReturnedCoinChecker()).toEqual(false);
+    });
+  });
 });
