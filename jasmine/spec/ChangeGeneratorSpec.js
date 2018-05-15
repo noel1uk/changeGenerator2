@@ -33,6 +33,10 @@ describe('ChangeGenerator', function() {
 
   describe('.coinIsInReturnedCoinChecker', function() {
 
+    afterEach(function() {
+      cg.collectedCoins = {};
+    });
+
     it("returns false when coin hasn't already been added to the collectedCoins property", function() {
       expect(cg.coinIsInReturnedCoinChecker(2)).toEqual(false);
     });
@@ -44,6 +48,10 @@ describe('ChangeGenerator', function() {
 
   describe('.addCoin', function() {
 
+    afterEach(function() {
+      cg.collectedCoins = {};
+    });
+    
     it('adds a coin to the collectedCoins', function() {
       cg.addCoin(2);
       expect(cg.collectedCoins[2]).toEqual(1);
