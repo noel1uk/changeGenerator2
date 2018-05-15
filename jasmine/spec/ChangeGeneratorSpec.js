@@ -56,5 +56,10 @@ describe('ChangeGenerator', function() {
       cg.addCoin(2);
       expect(cg.collectedCoins[2]).toEqual(1);
     });
+    it('increments the value when coin is already in collectedCoins', function() {
+      cg.addCoin(2);
+      cg.addCoin(2);
+      expect(cg.collectedCoins[2]).toEqual(2);
+    });
   });
 });
