@@ -69,13 +69,15 @@ describe('ChangeGenerator', function() {
   });
 
   describe('.returnChange', function() {
-    cg2 = new ChangeGenerator();
-    cg2.collectedCoins = {2: 1}
+    beforeEach(function() {
+      cg2 = new ChangeGenerator();
+      cg2.collectedCoins = {2: 1}
+    })
     it('returns the value and coin quantity in the correct format', function() {
       expect(cg2.returnChange()).toEqual('1 x 2p');
     });
-    cg2.collectedCoins = {2: 2}
     it('returns the correct values', function() {
+      cg2.collectedCoins = {2: 2};
       expect(cg2.returnChange()).toEqual('2 x 2p');
     });
   });
